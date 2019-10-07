@@ -91,6 +91,8 @@ parts:
       dpkg -x $(basename $PKGPATH) unpack/
       mkdir -p $SNAPCRAFT_PART_INSTALL/boot-assets
       cp -a unpack/lib/firmware/*/device-tree/* $SNAPCRAFT_PART_INSTALL/boot-assets
+      cp dtb/dt-blob.bin $SNAPCRAFT_PART_INSTALL/boot-assets
+      cp dtb/balena-fin.dtbo $SNAPCRAFT_PART_INSTALL/boot-assets/overlays
       rm -rf unpack
     build-packages:
       - coreutils
